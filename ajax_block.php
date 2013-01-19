@@ -13,13 +13,13 @@
  
 //call a engine at once
 require_once(dirname(dirname(dirname(__FILE__))). '/engine/start.php');
-
+$block_list_link = '<a href="'.lee_baseurl.'settings/plugins/'.lee_loggedin_entity_username.'">'.elgg_echo('block:user:ajax:message:3').'</a>';
 $t = elgg_get_plugin_user_setting('blockuser_get', lee_loggedin_user_guid , 'blockuser');
 $decode = base64_decode(get_input('block_user'));
 if(empty($t)){ $value = $decode;
 } else { $value = $t.', '.$decode; }
 $pown = '/'.$decode.'/i';
-if(preg_match($pown, $t, $matches)){ echo(elgg_echo('block:user:exsit'));  } else {
+if(preg_match($pown, $t, $matches)){ echo(elgg_echo('block:user:exsit')); echo(' '.$block_list_link);  } else {
 lianglee_set_usersettings(array(
 'name' => 'blockuser_get',
 'value' => $value,
