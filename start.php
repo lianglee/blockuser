@@ -30,9 +30,7 @@ elgg_register_page_handler('blockuser', 'blockuser_handler');
 * Register a blockuser css to system
 */
 elgg_extend_view('css/elgg', 'blockuser/css');
-
-elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'blockuser_owner_block_menu');
-
+elgg_extend_view('icon/user/default','blockuser/view_button');
 elgg_extend_view('page/elements/body', 'blockuser/api');
 }
 /**
@@ -87,21 +85,5 @@ switch ($page[0]) {
 			return false;
 	}
 	return true;
-}
-
-
-/**
- * Add a menu item to an ownerblock
- */
-function blockuser_owner_block_menu($hook, $type, $return, $params) {
-	    $url_gen = lee_framework_encode_64($params['entity']->username);
-		$url = "settings/plugins/".lee_loggedin_entity_username."?block_user=".$url_gen;
-	    if (elgg_is_logged_in() && elgg_get_logged_in_user_guid() != $user->guid) {
-		$opt = array('name' => 'blockuser', 'text' => elgg_echo('blockuser'), 'href' =>  "#lianglee_blockuser",'id' => 'lianglee_blockuser_load');
-		$item = ElggMenuItem::factory($opt);
-		$item->setSection('action');
-		$return[] = $item;
-      	}
-        return $return; 
 }
 
