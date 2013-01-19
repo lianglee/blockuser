@@ -29,4 +29,23 @@ height:40px;
 margin: 10px 15px 4px;
 font-weight: bold;
 }
+.LiangLee_blockuser_view_box{
+font-weight: bold;
+padding: 3px 0 3px 5px;
+margin-top: 10px;
+background:#fff;
+height:15px;
+border:1px solid #E8E8E8;
+}
+.LiangLee_blockuser_view_box:hover{
+border:1px solid #E8E8E8;
+background:#F3F3F3;
+}
+.LiangLee_blockuser_view_icon{
+background:url(<?php echo lee_baseurl;?>mod/blockuser/media/icon_blockUser.gif) center left no-repeat;
+padding:0 0 0 21px;
+white-space:nowrap;
+text-decoration:none;
+}
+
 /* LiangLeeBlockUser CSS Ends */
