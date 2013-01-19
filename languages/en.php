@@ -20,7 +20,9 @@ $english = array(
 'block:user:ok' => 'The user is now blocked!.',
 'block' => 'Block',
 'block:error:msg' => "Sorry the page you are requested is not found or you don't have premission to view that page",
-
+'block:user:ajax:message:1' => 'If you find this user fake, spam then report to Administrator.',
+'block:user:ajax:message:2' => 'Are you sure to block this user?',
+'block:user:ajax:message:3' => 'View Blocklist',
  );
 					
 add_translation("en", $english);
