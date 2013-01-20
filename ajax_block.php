@@ -26,5 +26,5 @@ lianglee_set_usersettings(array(
 'user_guid' => lee_loggedin_user_guid,
 'plugin_id' => 'blockuser'
 ));
-echo(elgg_echo('block:user:ok')); 
+echo(elgg_echo('block:user:ok')); echo(' '.$block_list_link);
 }
