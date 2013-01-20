@@ -96,7 +96,7 @@ switch ($page[0]) {
 function blockuser_owner_block_menu($hook, $type, $return, $params) {
 	    $url_gen = lee_framework_encode_64($params['entity']->username);
 		$url = "settings/plugins/".lee_loggedin_entity_username."?block_user=".$url_gen;
-	    if (elgg_is_logged_in() && lee_loggedin_entity_guid != $params['entity']->guid) {
+	    if (elgg_is_logged_in() && lee_loggedin_entity_guid != $params['entity']->guid && elgg_in_context('profile')) {
 		$opt = array(
 		   'name' => 'blockuser', 
 		   'text' => '<div class="LiangLee_blockuser_view_icon">'.elgg_echo('blockuser').'</div>', 
