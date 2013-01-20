@@ -10,5 +10,5 @@
     <PRJ Property="ProductCode" Value="9972:{A13833AC-LEE-9JF2-87BA-BLKU110A}" Type="5"/>
     <PRJ Property="ProductLanguage" Value="2057"/>
     <PRJ Property="ProductName" Value="LiangLeeBlockuser" ValueLocId="*"/>
-    <PRJ Property="ProductVersion" Value="1.0.3"/>
+    <PRJ Property="ProductVersion" Value="1.0.4"/>
   </COMPONENT>
