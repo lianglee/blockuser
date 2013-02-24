@@ -18,8 +18,7 @@ $t = elgg_get_plugin_user_setting('blockuser_get', lee_loggedin_user_guid , 'blo
 $decode = base64_decode(get_input('block_user'));
 if(empty($t)){ $value = $decode;
 } else { $value = $t.', '.$decode; }
-$pown = '/'.$decode.'/i';
-if(preg_match($pown, $t, $matches)){ echo(elgg_echo('block:user:exsit')); echo(' '.$block_list_link);  } else {
+if(in_array($decode, lee_framework_get_options($t))){ echo(elgg_echo('block:user:exsit')); echo(' '.$block_list_link);  } else {
 lianglee_set_usersettings(array(
 'name' => 'blockuser_get',
 'value' => $value,
