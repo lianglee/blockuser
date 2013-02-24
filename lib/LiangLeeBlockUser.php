@@ -30,12 +30,10 @@ echo  $list;
 function blockuser_access($forward = '', $user){
 $settings = elgg_get_plugin_user_setting('blockuser_get', $user->guid, 'blockuser');
 $users = lee_framework_get_options($settings); 
-		foreach($users as $user){
-		if(lee_loggedin_entity_username == $user && !lee_loggedin_admin && lee_loggedin_entity_username !== elgg_get_page_owner_entity()->username){ 
-	     if(!empty($forward)){forward($forward);};
-		   }		
-		}
+if(!lee_loggedin_admin && lee_loggedin_entity_username !== elgg_get_page_owner_entity()->username && in_array(lee_loggedin_entity_username, $users)){
+	     if(!empty($forward)){forward($forward);}
 	}
+}	
 /**
 * Block a access for messages
 * Uses blockuser_access_messages(<forward>, <usersettings guid>);
@@ -45,10 +43,8 @@ $users = lee_framework_get_options($settings);
 function blockuser_access_messages($forward = '' , $user){
 $settings = elgg_get_plugin_user_setting('blockuser_get', $user, 'blockuser');
 $users = lee_framework_get_options($settings); 
-		foreach($users as $user){
-		if(lee_loggedin_entity_username == $user && !lee_loggedin_admin){ 
-	     if(!empty($forward)){forward($forward);};
-		   }		
+if(!lee_loggedin_admin && in_array(lee_loggedin_entity_username, $users)){ 
+	     if(!empty($forward)){forward($forward);}
 		}
 }
 /**
