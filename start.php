@@ -34,6 +34,14 @@ elgg_extend_view('css/elgg', 'blockuser/css');
 elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'blockuser_owner_block_menu');
 
 elgg_extend_view('page/elements/body', 'blockuser/api');
+
+if (elgg_is_active_plugin('friend_request')) { 
+elgg_register_action("friends/add", dirname(__FILE__) . "/actions/friends/add.php");
+} else {
+elgg_register_action("friends/add", dirname(__FILE__) . "/actions/default/friends/add.php");
+
+   }
+
 }
 /**
  * Profile page handler
