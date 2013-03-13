@@ -1,8 +1,11 @@
 
-LiangLeeBlockUser 1.0.4
-(January 20, 2013 from https://github.com/lianglee/LiangLeeBlockUser/tree/master)
+LiangLeeBlockUser 1.0.5
+(March 13, 2013 from https://github.com/lianglee/LiangLeeBlockUser/tree/master)
 
-Bugfixes:
+ApiChanged:
 
-* Button should display on profile only. 
+* Core Lib changed. 
 
+Enhancements:
+
+* Added Support for Friend_requsest Plugin.
