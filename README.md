@@ -47,6 +47,7 @@ Features
 
 * A Block User button on user's profile.
 
+* Friend Request deney if user blocked.
 More features will be added in feature release's.
 
 Thanks
