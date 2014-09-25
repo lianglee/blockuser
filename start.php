@@ -35,6 +35,8 @@ elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'blockuser_own
 
 elgg_extend_view('page/elements/body', 'blockuser/api');
 
+elgg_register_plugin_hook_handler('route', 'all', 'blockuser_all', 0);
+
 if (elgg_is_active_plugin('friend_request')) { 
 elgg_register_action("friends/add", dirname(__FILE__) . "/actions/friends/add.php");
 } else {
@@ -42,6 +44,14 @@ elgg_register_action("friends/add", dirname(__FILE__) . "/actions/default/friend
 
    }
 
+}
+/**
+ * Block user from all core plugins
+ *
+ * @return block;
+ */
+function blockuser_all($hook, $type, $returnvalue, $params){
+blockuser_all_ini($hook, $type, $returnvalue, $params);
 }
 /**
  * Profile page handler
@@ -115,4 +125,3 @@ function blockuser_owner_block_menu($hook, $type, $return, $params) {
       	}
         return $return; 
 }
-

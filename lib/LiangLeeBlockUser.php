@@ -31,7 +31,7 @@ function blockuser_access($forward = '', $user){
 $settings = elgg_get_plugin_user_setting('blockuser_get', $user->guid, 'blockuser');
 $users = lee_framework_get_options($settings); 
 if(!lee_loggedin_admin && lee_loggedin_entity_username !== elgg_get_page_owner_entity()->username && in_array(lee_loggedin_entity_username, $users)){
-	     if(!empty($forward)){forward($forward);}
+	     if(!empty($forward) && $profileavatar == 0){forward($forward);}
 	}
 }	
 /**
@@ -61,4 +61,38 @@ $ajax = elgg_view_form('blockuser/ajax/view', array(
 	'id' => 'block'
 ));
 return $ajax;
+}
+
+function blockuser_all_ini($hook, $type, $returnvalue, $params){
+//Get owner entity using url third parameters url/plugin/owner/<user>
+$blocks = array('groups', 'blog', 'page', 'photos', 'bookmarks', 'files','discussion');
+if(in_array($type, $blocks)){
+   if(isset($returnvalue['segments'][1]) && !empty($returnvalue['segments'][1]) && !elgg_is_admin_logged_in()){
+	    if(get_entity($returnvalue['segments'][1])){
+        $data = get_entity($returnvalue['segments'][1])->getOwnerEntity();
+		blockuser_access('/blockuser', $data);
+		}
+    }
+}	
+//Get owner entity using url third parameters url/plugin/owner/<user>; Using username
+$block_2 = array('thewire');
+if(in_array($type, $block_2)){
+if(isset($returnvalue['segments'][1]) && !empty($returnvalue['segments'][1]) && !elgg_is_admin_logged_in()){
+        if(get_user_by_username($returnvalue['segments'][1])){
+	    $data = get_user_by_username($returnvalue['segments'][1]);
+		blockuser_access('/blockuser', $data);
+		}
+    }
+}
+//Get owner entity using url second parameters url/plugin/<user>; Using username
+$block_3 = array('friends');
+if(in_array($type, $block_3)){
+if(isset($returnvalue['segments'][0]) && !empty($returnvalue['segments'][0]) && !elgg_is_admin_logged_in()){
+	    if(get_user_by_username($returnvalue['segments'][0])){
+        $data = get_user_by_username($returnvalue['segments'][0]);
+		blockuser_access('/blockuser', $data);
+		}
+    }
+}
+
 }

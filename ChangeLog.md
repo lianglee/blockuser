@@ -1,4 +1,43 @@
 
+LiangLeeBlockUser 1.0.6
+(August 1, 2013 from https://github.com/lianglee/LiangLeeBlockUser/tree/master)
+
+Enhancements:
+  Added Support:
+
+* Profile
+
+* Messages
+
+* Thewire
+
+* Bookmarks
+
+* Files
+
+* Friend Request
+
+* Blog
+
+* Groups
+
+* Friends
+
+* Tidypics
+
+* Discussion
+
+LiangLeeBlockUser 1.0.5
+(March 13, 2013 from https://github.com/lianglee/LiangLeeBlockUser/tree/master)
+
+ApiChanged:
+
+* Core Lib changed. 
+
+Enhancements:
+
+* Added Support for Friend_requsest Plugin.
+
 LiangLeeBlockUser 1.0.4
 (January 20, 2013 from https://github.com/lianglee/LiangLeeBlockUser/tree/master)
 

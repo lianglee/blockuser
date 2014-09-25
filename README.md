@@ -48,6 +48,33 @@ Features
 * A Block User button on user's profile.
 
 * Friend Request deney if user blocked.
+
 More features will be added in feature release's.
+
+Plugins Supported ( Added V 1.0.6 )
+====================================
+
+* Profile
+
+* Messages
+
+* Thewire
+
+* Bookmarks
+
+* Files
+
+* Friend Request
+
+* Blog
+
+* Groups
+
+* Friends
+
+* Tidypics
+
+* Discussion
+
 
 Thanks
